@@ -2,7 +2,7 @@
 
 const express = require('express');
 const path = require('path');
-const api = require('./routes/notes');
+const notes = require('./routes/notes');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -10,11 +10,8 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
+app.use('/api/notes', notes);
 app.use(express.static('public'));
-
-
-
 
 
 // GET Route for homepage
@@ -31,3 +28,4 @@ app.get('/notes', (req, res) =>
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`)
 });
+

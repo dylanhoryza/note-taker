@@ -9,11 +9,11 @@ notes.get('/notes', (req, res) => {
 })
 
 notes.post('/notes', (req, res) => {
-  console.log(req.body)
+  console.info(req.body)
 
   const { title, text } = req.body;
 
-  if (req.body) {
+  if (title && text) {
     const newNote = {
       title,
       text,

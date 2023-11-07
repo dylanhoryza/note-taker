@@ -7,7 +7,7 @@ const uuid = require('uuid');
 
 notes.get('/', (req, res) => {
   // fs.readFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
-  fs.readFile('db/db.json', 'utf8', function(err, data){ 
+  fs.readFile('./db/db.json', 'utf8', function(err, data){ 
       
     // Display the file content 
     console.log(data); 
@@ -27,14 +27,14 @@ notes.post('/', (req, res) => {
       id: uuid.v4(),
     };
     console.log(newNote);
-    fs.readFile('db/db.json', 'utf-8', (err, data) => {
+    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
       if (err) {
         console.error(err);
       } else {
         const parsedData = JSON.parse(data);
         parsedData.push(newNote);
 
-        fs.writeFile('db/db.json', JSON.stringify(parsedData, null, 4),
+        fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 4),
         (writeErr) => 
         writeErr ? console.error(writeErr) : console.info('Successfully updated notes!')
         );
@@ -71,7 +71,7 @@ notes.delete('/:id', (req, res) => {
         console.error(err);
       } else {
         const parsedData = JSON.parse(data);
-        parsedData.push(newNote);
+        parsedData.filter(newNote);
 
         fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 4),
         (writeErr) => 

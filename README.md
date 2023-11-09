@@ -17,15 +17,19 @@
 
 ## Installation
 
-To install this application, simply click on this link and the application will be accessible in your broweser.
+To install this application, simply click on this link and the application will be accessible in your browser.
+https://note-taker-dh-3df82608d85b.herokuapp.com/
 
 ## Usage
 
+To use this application, enter a title and text for your note. Click the save icon in the top right hand side of the screen. Your note will be added
+to the left sidebar of the application. If you click the trash icon, your note will be deleted.
 The following screeenshots show how to use this application.
 
-```md
-![alt text](assets/images/screenshot.png)
-```
+![Screenshot 1](public/assets/images/sc1.png)
+![Screenshot 2](public/assets/images/sc2.png)
+![Screenshot 3](public/assets/images/sc3.png)
+![Screenshot 4](public/assets/images/sc4.png)
 
 ## Credits
 
